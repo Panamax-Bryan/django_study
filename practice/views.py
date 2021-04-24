@@ -10,7 +10,7 @@ class Assign1View(View):
 
         sub_list = []
 
-        for sub in sub_list:
+        for sub in subcategories:
             sub_list.append({
                 'name'   : sub.name,
                 'main_category_id' : sub.main_category_id
