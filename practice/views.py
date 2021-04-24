@@ -20,7 +20,9 @@ class Assign1View(View):
 
 class Assign2View(View):
     def get(self, request):
-        a = MainCategory.objects.get(name='눈 건강')
+        data = json.loads(request.body)
+        name = data['name']
+        a = MainCategory.objects.get(name=name)
         
         sub_list = []
         for i in SubCategory.objects.filter(main_category=a):
