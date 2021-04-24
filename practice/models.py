@@ -33,7 +33,6 @@ class Product(models.Model):
     discount     = models.ForeignKey(Discount,on_delete=models.SET_NULL, null=True)
     shipping_fee = models.ForeignKey(ShippingFee, on_delete=models.SET_NULL, null=True)
     sub_category  = models.ManyToManyField(SubCategory,through='SubCategoryProduct')
-    option       = models.ManyToManyField('self',through='Option',symmetrical=False)
     class Meta:
         db_table = 'products'
 
